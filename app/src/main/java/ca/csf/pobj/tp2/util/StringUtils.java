@@ -5,10 +5,12 @@ public final class StringUtils {
         //Private, so it is a static class
     }
 
-    public static boolean isBlank(String string) {
-        for (int i = 0; i < string.length(); i++) {
-            if (!Character.isWhitespace(string.charAt(i))) {
-                return false;
+    public static boolean isBlank(CharSequence value) {
+        if (value != null) {
+            for (int i = 0; i < value.length(); i++) {
+                if (!Character.isWhitespace(value.charAt(i))) {
+                    return false;
+                }
             }
         }
         return true;

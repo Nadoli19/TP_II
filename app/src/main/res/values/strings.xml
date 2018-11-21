@@ -2,4 +2,6 @@
     <string name="app_name">Chiffres Romains</string>
     <string name="hint_input">Nombre à convertir</string>
     <string name="button_text">En chiffres romains</string>
+    <string name="error_not_a_number">Veuillez entrer un nombre</string>
+    <string name="error_out_of_range_number">Veuillez entrez un nombre entre 1 et 4999</string>
 </resources>

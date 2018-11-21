@@ -9,4 +9,8 @@ public class NumberUtils {
     public static int toInt(String string) {
         return Integer.parseInt(string);
     }
+
+    public static String toString(int value) {
+        return String.valueOf(value);
+    }
 }

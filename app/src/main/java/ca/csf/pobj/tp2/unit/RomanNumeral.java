@@ -1,8 +1,10 @@
 package ca.csf.pobj.tp2.unit;
 
+import java.security.InvalidParameterException;
+
 public class RomanNumeral {
-    private final static int MAX_VALUE = 4999;
-    private final static int MIN_VALUE = 1;
+    public final static int MAX_VALUE = 4999;
+    public final static int MIN_VALUE = 1;
     private final static String oneThousand = "M";
     private final static String fiveHundreds = "D";
     private final static String oneHundred = "C";
@@ -14,7 +16,7 @@ public class RomanNumeral {
     public String convertToRomanNumeral(int input) {
         StringBuilder result = new StringBuilder("");
         if (input < MIN_VALUE || input > MAX_VALUE) {
-            return "Invalid input";
+            throw new InvalidParameterException("Invalid input");
         } else {
             while (input != 0) {
                 while (input >= 1000) {
