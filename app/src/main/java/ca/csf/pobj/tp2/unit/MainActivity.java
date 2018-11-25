@@ -32,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
         romanNumeral = new RomanNumeral();
 
+        //BEN_CORRECTION : Lire le "warning" + Syndrome "StackOverflow".
+        //BEN_CORRECTION : Variable du nom de "et" incorrect.
         EditText et = (EditText) findViewById(R.id.inputEditText);
+        //BEN_CORRECTION : Limites aurait du être envoyés sous forme d'entiers, et non pas de chaine
+        //                 de caractères. Syndrome "StackOverflow".
         et.setFilters(new InputFilter[]{new InputFilterMinMax("1", "4999")});
     }
 
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isInvalid() {
+        //BEN_REVIEW : Ligne très longue aurait pu être raccourcie et simplifiée de diverses façons.
         if (Integer.parseInt(inputEditText.getText().toString()) < RomanNumeral.MIN_VALUE || Integer.parseInt(inputEditText.getText().toString()) > RomanNumeral.MAX_VALUE) {
             return true;
         } else {

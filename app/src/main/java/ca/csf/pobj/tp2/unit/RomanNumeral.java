@@ -18,6 +18,7 @@ public class RomanNumeral {
         if (input < MIN_VALUE || input > MAX_VALUE) {
             throw new InvalidParameterException("Invalid input");
         } else {
+            //BEN_CORRECTION : Duplication de code + Syndrome Stack Overflow.
             while (input != 0) {
                 while (input >= 1000) {
                     result.append(oneThousand);
